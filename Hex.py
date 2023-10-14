@@ -72,4 +72,6 @@ class Hex:
         
         if denominator:
             return f"({numerator}) / ({denominator})"
-        return numerator
+        if numerator:
+            return numerator
+        return "1"
