@@ -41,7 +41,8 @@ class Hex:
         self.candela -= 1
 
     def __eq__(self, hex):
-        return self.meter == hex.meter and self.kilogram == hex.kilogram
+        return self.meter == hex.meter and self.kilogram == hex.kilogram and self.second == hex.second and \
+            self.ampere == hex.ampere and self.kelvin == hex.kelvin and self.mole == hex.mole and self.candela == hex.candela
 
     def __str__(self):
         numerator = ""
