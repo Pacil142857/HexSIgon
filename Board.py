@@ -1,4 +1,5 @@
 from Hex import Hex
+from Order import Order
 
 class Board:
     compatibility = [[2, 3, 1], # Hex 0
@@ -12,12 +13,20 @@ class Board:
     def __init__(self, hex_0=Hex(), hex_1=Hex(), hex_2=Hex(), hex_3=Hex(), hex_4=Hex(), hex_5=Hex(), hex_6=Hex()):
         self.hexes = [hex_0, hex_1, hex_2, hex_3, hex_4, hex_5, hex_6]
         self.orders = [Order(), Order(), Order()]
-        self.moves = 0
+
+
+        
+        self.moveCount = 0
+        self.orderCount = 0
+
+    def refresh_order(self, order_index):
 
 
 
 
 
+
+        self.orders[order_index]
     def __str__(self):
         return f"Hex0: {self.hex_0.__str__}, Hex1: {self.hex_1.__str__}, Hex2: {self.hex_0.__str__}, Hex3: {self.hex_3.__str__}, Hex4: {self.hex_4.__str__}, Hex5: {self.hex_5.__str__}, Hex6: {self.hex_6.__str__},"
 
