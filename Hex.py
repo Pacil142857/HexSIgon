@@ -49,6 +49,31 @@ class Hex:
     def removeCandela(self):
         self.candela -= 1
 
+    def multiply(self, other):
+        if isinstance(other, Hex):
+            self.meter += other.meter
+            self.kilogram += other.kilogram
+            self.second += other.second
+            self.ampere += other.ampere
+            self.kelvin += other.kelvin
+            self.mole += other.mole
+            self.candela += other.candela
+        else:
+            #TODO: Is there a way to just force it to be another Hex?? I just did this because idk
+            raise ValueError("Can only multiply with another Hex object.")
+
+    def divide(self, other):
+        if isinstance(other, Hex):
+            self.meter -= other.meter
+            self.kilogram -= other.kilogram
+            self.second -= other.second
+            self.ampere -= other.ampere
+            self.kelvin -= other.kelvin
+            self.mole -= other.mole
+            self.candela -= other.candela
+        else:
+            raise ValueError("Can only divide by another Hex object.")
+    
     def __eq__(self, hex):
         return self.meter == hex.meter and self.kilogram == hex.kilogram and self.second == hex.second and \
             self.ampere == hex.ampere and self.kelvin == hex.kelvin and self.mole == hex.mole and self.candela == hex.candela
