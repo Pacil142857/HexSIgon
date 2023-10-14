@@ -17,24 +17,6 @@ class Hex:
         self.mole = 0
         self.candela = 0
         
-    def multiply(self, hex):
-        hex.meter += self.meter
-        hex.kilogram += self.kilogram
-        hex.second += self.second
-        hex.ampere += self.ampere
-        hex.kelvin += self.kelvin
-        hex.mole += self.mole
-        hex.candela += self.candela
-    
-    def divide(self, hex):
-        hex.meter -= self.meter
-        hex.kilogram -= self.kilogram
-        hex.second -= self.second
-        hex.ampere -= self.ampere
-        hex.kelvin -= self.kelvin
-        hex.mole -= self.mole
-        hex.candela -= self.candela
-    
     # Add methods
     def addMeter(self):
         self.meter += 1
@@ -77,7 +59,6 @@ class Hex:
             self.mole += other.mole
             self.candela += other.candela
         else:
-            #TODO: Is there a way to just force it to be another Hex?? I just did this because idk
             raise ValueError("Can only multiply with another Hex object.")
 
     def divide(self, other):
