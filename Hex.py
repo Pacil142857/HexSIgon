@@ -95,7 +95,7 @@ class Hex:
                     denominator += f"({symbol})"
         
         if denominator:
-            return f"{numerator}\n{'—' * max(len(numerator), len(denominator))}\n{denominator}"
+            return f"{numerator if numerator else 1}\n{'—' * max(len(numerator), len(denominator))}\n{denominator}"
         if numerator:
             return numerator
         return "1"
