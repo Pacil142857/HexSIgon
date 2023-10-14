@@ -41,4 +41,22 @@ class Hex:
         self.candela -= 1
 
     def __str__(self):
-        return f"Meter: {self.meter}, Kilogram: {self.kilogram}, Second: {self.second}, Ampere: {self.ampere}, Kelvin: {self.kelvin}, Mole: {self.mole}, Candela: {self.candela}"
+        numerator = ""
+        denominator = ""
+        # Create numerator and denominator
+        for unit, symbol in ((self.meter, "m"), (self.kilogram, "kg"), (self.second, "s"),
+                             (self.ampere, "A"), (self.kelvin, "K"), (self.mole, "mol"), (self.candela, "cd")):
+            if unit > 0:
+                if unit > 1:
+                    numerator += f"({symbol}^{unit})"
+                else:
+                    numerator += f"({symbol})"
+            elif unit < 0:
+                if unit < -1:
+                    denominator += f"({symbol}^{unit})"
+                else:
+                    denominator += f"({symbol})"
+        
+        if denominator:
+            return f"({numerator}) / ({denominator})"
+        return numerator
