@@ -59,11 +59,11 @@ while run:
                         
                         # Multiply/divide
                         if left_mouse_button_clicked:
-                            board.multiplyHexes(hex_clicked_idx, i)
-                            board.add_hex()
+                            if board.multiplyHexes(hex_clicked_idx, i):
+                                board.add_hex()
                         else:
-                            board.divideHexes(hex_clicked_idx, i)
-                            board.add_hex()
+                            if board.divideHexes(hex_clicked_idx, i):
+                                board.add_hex()
                         hexes[hex_clicked_idx].fill_color = (0, 0, 0)
                         hex_clicked_idx = -1
                         

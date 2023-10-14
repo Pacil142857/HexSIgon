@@ -68,16 +68,20 @@ class Board:
 
     # We move the first hex INTO the second hex, thus first hex may disappear. 
     def multiplyHexes(self, hex_index_1, hex_index_2):
-        if(hex_index_2 in self.compatibility[hex_index_1]):
+        if hex_index_2 in self.compatibility[hex_index_1]:
             self.move_count += 1
             self.hexes[hex_index_2].multiply(self.hexes[hex_index_1])
             self.hexes[hex_index_1].clear()
+            return True
+        return False
 
     # We move the first hex INTO the second hex, thus first hex may disappear. 
     def divideHexes(self, hex_index_1, hex_index_2):
-        if(hex_index_2 in self.compatibility[hex_index_1]):
+        if hex_index_2 in self.compatibility[hex_index_1]:
             self.move_count += 1
             self.hexes[hex_index_2].divide(self.hexes[hex_index_1])
             self.hexes[hex_index_1].clear()
+            return True
+        return False
 
 
