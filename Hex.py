@@ -63,13 +63,13 @@ class Hex:
 
     def divide(self, other):
         if isinstance(other, Hex):
-            self.meter -= other.meter
-            self.kilogram -= other.kilogram
-            self.second -= other.second
-            self.ampere -= other.ampere
-            self.kelvin -= other.kelvin
-            self.mole -= other.mole
-            self.candela -= other.candela
+            self.meter = other.meter - self.meter
+            self.kilogram = other.kilogram - self.kilogram
+            self.second = other.second - self.second
+            self.ampere = other.ampere - self.ampere
+            self.kelvin = other.kelvin - self.kelvin
+            self.mole = other.mole - self.mole
+            self.candela = other.candela - self.candela
         else:
             raise ValueError("Can only divide by another Hex object.")
     
