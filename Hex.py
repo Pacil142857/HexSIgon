@@ -40,6 +40,9 @@ class Hex:
     def removeCandela(self):
         self.candela -= 1
 
+    def __eq__(self, hex):
+        return self.meter == hex.meter and self.kilogram == hex.kilogram
+
     def __str__(self):
         numerator = ""
         denominator = ""
