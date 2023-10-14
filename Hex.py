@@ -91,12 +91,12 @@ class Hex:
                     numerator += f"({symbol})"
             elif unit < 0:
                 if unit < -1:
-                    denominator += f"({symbol}^{unit})"
+                    denominator += f"({symbol}^{-1 * unit})"
                 else:
                     denominator += f"({symbol})"
         
         if denominator:
-            return f"({numerator})\n{'—' * max(len(numerator), len(denominator))}\n({denominator})"
+            return f"{numerator}\n{'—' * max(len(numerator), len(denominator))}\n{denominator}"
         if numerator:
             return numerator
         return "1"
