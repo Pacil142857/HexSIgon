@@ -10,7 +10,7 @@ base_units = [
     Unit('candela', 'cd', 'time', Hex(0, 0, 0, 0, 0, 0, 1)),
 ]
 
-easy_derived_units = [
+derived_units = [
     Unit( 'Hertz', 'Hz', 'Frequency', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Newton', 'N', 'Force', 'Weight', Hex(second = -2, meter = 1, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Pascal', 'Pa', 'Pressure', 'Stress', Hex(second = -2, meter = -1, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),

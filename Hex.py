@@ -17,6 +17,20 @@ class Hex:
         self.kelvin = 0
         self.mole = 0
         self.candela = 0
+
+    def difficulty(self):
+        return(
+            abs(self.second)+
+            abs(self.meter)+
+            abs(self.kilogram)+
+            abs(self.ampere)+
+            abs(self.kelvin)+
+            abs(self.mole)+
+            abs(self.candela)
+        )
+
+
+
         
     # Add methods
     def addMeter(self):
