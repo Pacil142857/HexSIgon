@@ -74,8 +74,8 @@ while run:
                     # Remove order if it's been completed successfully
                     if order.order.compare_to(hexes[hex_clicked_idx].hex):
                         board.refresh_order(i)
-                    
-                    hexes[hex_clicked_idx].hex.clear()
+                        hexes[hex_clicked_idx].hex.clear()
+                        
                     hexes[hex_clicked_idx].fill_color = (0, 0, 0)
                     hex_clicked_idx = -1
                     break
