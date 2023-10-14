@@ -7,12 +7,17 @@ class OrderUI:
         self.y = y
         self.rect_color = rect_color
         self.text_color = text_color
-    
-    def draw(self, surface):
+        
+    def getTextAndRect(self):
         # Render the text
         font = pygame.font.SysFont("Courier New", 40)
         text = font.render(str(self.order), True, self.text_color)
         rect = text.get_rect(topleft = (self.x, self.y))
+        
+        return (text, rect)
+    
+    def draw(self, surface):
+        text, rect = self.getTextAndRect()
         
         # Draw the rectangle
         pygame.draw.rect(surface, self.rect_color, rect, 1, 4)
