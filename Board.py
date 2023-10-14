@@ -3,6 +3,7 @@ from Hex import Hex
 from Order import Order
 from constants import base_units
 from constants import derived_units
+import pygame
 
 class Board:
     compatibility = [[2, 3, 1], # Hex 0
@@ -31,6 +32,36 @@ class Board:
             quantity_name=new_unit.quantity, 
             unit_name=new_unit.name
         )
+    
+
+    def add_hex(self):
+
+        # first check that there even are spaces to spawn a thing. 
+        available = False
+        available_indexes = []
+        for index in range(7):
+            if self.hexes[index].isClear:
+                available = True
+                available_indexes.append(index)
+
+        if(not available):
+            print('game over')
+            pygame.quit()
+
+
+        spawn_index = random.choice(available_indexes)
+        new_unit = random.choice(base_units)
+
+        self.hexes[spawn_index].change(
+            second = new_unit.hex.second, 
+            meter = new_unit.hex.meter, 
+            kilogram = new_unit.hex.kilogram, 
+            ampere = new_unit.hex.ampere, 
+            kelvin = new_unit.hex.kelvin, 
+            mole = new_unit.hex.mole, 
+            candela = new_unit.hex.candela, 
+            )
+
 
     def __str__(self):
         return f"Hex0: {self.hex_0.__str__}, Hex1: {self.hex_1.__str__}, Hex2: {self.hex_0.__str__}, Hex3: {self.hex_3.__str__}, Hex4: {self.hex_4.__str__}, Hex5: {self.hex_5.__str__}, Hex6: {self.hex_6.__str__},"

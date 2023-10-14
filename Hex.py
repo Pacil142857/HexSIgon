@@ -9,6 +9,15 @@ class Hex:
         self.mole = mole
         self.candela = candela
     
+    def change(self, second=0, meter=0, kilogram=0, ampere=0, kelvin=0, mole=0, candela=0):
+        self.second = second
+        self.meter = meter
+        self.kilogram = kilogram
+        self.ampere = ampere
+        self.kelvin = kelvin
+        self.mole = mole
+        self.candela = candela
+
     def clear(self):
         self.meter = 0
         self.kilogram = 0
@@ -17,6 +26,17 @@ class Hex:
         self.kelvin = 0
         self.mole = 0
         self.candela = 0
+    
+    def isClear(self):
+        return (
+            self.meter == 0 and
+            self.kilogram == 0 and 
+            self.second == 0 and
+            self.ampere == 0 and
+            self.kelvin == 0 and
+            self.mole == 0 and
+            self.candela == 0 
+        )
 
     def difficulty(self):
         return(
@@ -29,9 +49,6 @@ class Hex:
             abs(self.candela)
         )
 
-
-
-        
     # Add methods
     def addMeter(self):
         self.meter += 1
