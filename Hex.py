@@ -1,8 +1,9 @@
 class Hex:
-    def __init__(self, meter=0, kilogram=0, second=0, ampere=0, kelvin=0, mole=0, candela=0):
+    def __init__(self, second=0, meter=0, kilogram=0, ampere=0, kelvin=0, mole=0, candela=0):
+        
+        self.second = second
         self.meter = meter
         self.kilogram = kilogram
-        self.second = second
         self.ampere = ampere
         self.kelvin = kelvin
         self.mole = mole

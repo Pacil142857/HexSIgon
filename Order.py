@@ -1,5 +1,5 @@
 class Order():
-    def __init__(self, hex, points, quantity_name, unit_name):
+    def __init__(self, hex=None, points=None, quantity_name=None, unit_name=None):
         self.hex = hex
         self.points = points
         self.quantity_name = quantity_name

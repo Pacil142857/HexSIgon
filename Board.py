@@ -15,12 +15,12 @@ class Board:
         self.orders = [Order(), Order(), Order()]
 
 
-        
+
         self.moveCount = 0
         self.orderCount = 0
 
     def refresh_order(self, order_index):
-
+        
 
 
 
