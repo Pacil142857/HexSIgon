@@ -8,6 +8,15 @@ class Hex:
         self.mole = mole
         self.candela = candela
     
+    def clear(self):
+        self.meter = 0
+        self.kilogram = 0
+        self.second = 0
+        self.ampere = 0
+        self.kelvin = 0
+        self.mole = 0
+        self.candela = 0
+    
     # Add methods
     def addMeter(self):
         self.meter += 1
