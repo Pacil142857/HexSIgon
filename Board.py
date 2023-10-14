@@ -40,11 +40,11 @@ class Board:
         available = False
         available_indexes = []
         for index in range(7):
-            if self.hexes[index].isClear:
+            if self.hexes[index].isClear():
                 available = True
                 available_indexes.append(index)
 
-        if(not available):
+        if not available:
             print('game over')
             pygame.quit()
 
