@@ -16,6 +16,24 @@ class Hex:
         self.kelvin = 0
         self.mole = 0
         self.candela = 0
+        
+    def multiply(self, hex):
+        hex.meter += self.meter
+        hex.kilogram += self.kilogram
+        hex.second += self.second
+        hex.ampere += self.ampere
+        hex.kelvin += self.kelvin
+        hex.mole += self.mole
+        hex.candela += self.candela
+    
+    def divide(self, hex):
+        hex.meter -= self.meter
+        hex.kilogram -= self.kilogram
+        hex.second -= self.second
+        hex.ampere -= self.ampere
+        hex.kelvin -= self.kelvin
+        hex.mole -= self.mole
+        hex.candela -= self.candela
     
     # Add methods
     def addMeter(self):
