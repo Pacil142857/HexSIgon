@@ -1,8 +1,8 @@
 import pygame
 
 class OrderUI:
-    def __init__(self, hex, x, y, rect_color=(255, 255, 255), text_color=(255, 255, 255)):
-        self.hex = hex
+    def __init__(self, order, x, y, rect_color=(255, 255, 255), text_color=(255, 255, 255)):
+        self.order = order
         self.x = x
         self.y = y
         self.rect_color = rect_color
@@ -11,7 +11,7 @@ class OrderUI:
     def draw(self, surface):
         # Render the text
         font = pygame.font.SysFont("Courier New", 40)
-        text = font.render(str(hex), True, self.text_color)
+        text = font.render(str(self.order), True, self.text_color)
         rect = text.get_rect(center = (self.x, self.y))
         
         # Draw the rectangle
