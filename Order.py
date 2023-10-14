@@ -10,5 +10,5 @@ class Order:
     
     def __str__(self):
         if (self.unit_name):
-            return f"Create a {self.unit_name}, the unit for {self.quantity_name}"
-        return f"Create the unit for {self.quantity_name}"
+            return f"Create a {self.unit_name},\nthe unit for\n{self.quantity_name}"
+        return f"Create the unit for\n{self.quantity_name}"
