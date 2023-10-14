@@ -14,28 +14,25 @@ class Board:
         self.orders = [Order(), Order(), Order()]
         self.moves = 0
 
-    def generateOrder():
-        
+
 
 
 
     def __str__(self):
         return f"Hex0: {self.hex_0.__str__}, Hex1: {self.hex_1.__str__}, Hex2: {self.hex_0.__str__}, Hex3: {self.hex_3.__str__}, Hex4: {self.hex_4.__str__}, Hex5: {self.hex_5.__str__}, Hex6: {self.hex_6.__str__},"
 
-    # We move the first hex INTO the second hex, thus first hex may dissapear. 
+    # We move the first hex INTO the second hex, thus first hex may disappear. 
     def multiplyHexes(self, hex_index_1, hex_index_2):
         if(hex_index_2 in self.compatibility[hex_index_1]):
             self.moves+=1
             self.hexes[hex_index_2].multiply(self.hexes[hex_index_1])
-            self.hexes[hex_index_1].clear
+            self.hexes[hex_index_1].clear()
 
-    # We move the first hex INTO the second hex, thus first hex may dissapear. 
+    # We move the first hex INTO the second hex, thus first hex may disappear. 
     def divideHexes(self, hex_index_1, hex_index_2):
         if(hex_index_2 in self.compatibility[hex_index_1]):
             self.moves+=1
             self.hexes[hex_index_2].divide(self.hexes[hex_index_1])
-            self.hexes[hex_index_1].clear
-    
-    def submitHex(hex_index, order_index):
+            self.hexes[hex_index_1].clear()
 
 
