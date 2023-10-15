@@ -168,7 +168,7 @@ derived_units = [
     ( 'Coulomb', 'C', 'Electric Charge', Hex(second = 1, meter = 0, kilogram = 0, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
     ( 'Volt', 'V', 'Electric Potential',  Hex(second = -3, meter = 2, kilogram = 1, ampere = -1, kelvin = 0, mole = 0, candela = 0)),
     ( 'Farad', 'F', 'Capacitance', Hex(second = 4, meter = -2, kilogram = -1, ampere = 2, kelvin = 0, mole = 0, candela = 0)),
-    ( 'Ohm', 'Ω', 'Resistance',  Hex(second = -3, meter = 2, kilogram = 1, ampere = -2, kelvin = 0, mole = 0, candela = 0)),
+    ( 'Ohm', 'V\n—\nA', 'Resistance',  Hex(second = -3, meter = 2, kilogram = 1, ampere = -2, kelvin = 0, mole = 0, candela = 0)),
     ( 'Siemens', 'S', 'Electrical Conductance', Hex(second = 3, meter = -2, kilogram = -1, ampere = 2, kelvin = 0, mole = 0, candela = 0)),
     ( 'Weber', 'Wb', 'Magnetic Flux', Hex(second = -2, meter = 2, kilogram = 1, ampere = -1, kelvin = 0, mole = 0, candela = 0)),
     ( 'Tesla', 'T', 'Magnetic Flux Density', Hex(second = -2, meter = 0, kilogram = 1, ampere = -1, kelvin = 0, mole = 0, candela = 0)),
