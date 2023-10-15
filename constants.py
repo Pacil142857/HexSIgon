@@ -35,7 +35,7 @@ derived_units = [
     Unit( 'Meter per Second Squared', 'm/s²', 'Acceleration', Hex(second = -2, meter = 1, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     # Unit( 'Reciprocal Meter', 'm⁻¹', 'Wavenumber', Hex(second = 0, meter = -1, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Kilogram per Cubic Meter', 'kg/m³', 'Density', Hex(second = 0, meter = -3, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
-    Unit( 'Kilogram per Square Meter', 'kg/m²', 'Surface Density', Hex(second = 0, meter = 2, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
+    Unit( 'Kilogram per Square Meter', 'kg/m²', 'Surface Density', Hex(second = 0, meter = -2, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Cubic Meter per Kilogram', 'm³/kg', 'Specific Volume', Hex(second = 0, meter = 3, kilogram = -1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Ampere per Square Meter', 'A/m²', 'Current Density', Hex(second = 0, meter = -2, kilogram = 0, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Ampere per Meter', 'A/m', 'Magnetic Field Strength', Hex(second = 0, meter = -1, kilogram = 0, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
