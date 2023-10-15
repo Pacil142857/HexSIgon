@@ -34,9 +34,6 @@ orders.append(OrderUI(board.orders[0], 20, 20))
 orders.append(OrderUI(board.orders[1], 20, 20 + height // 3))
 orders.append(OrderUI(board.orders[2], 20, 20 + 2 * height // 3))
 
-# Score
-font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 28)
-
 
 status_text='hexSIgon!'
 status_color=(51, 50, 82)
@@ -122,6 +119,8 @@ while run:
         order.draw(screen)
     
     # Draw score
+    # Score
+    font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 35)
     text = font.render(f"Score: {board.score}", True, (255, 255, 255))
     screen.blit(text, text.get_rect(topright = (width - 30, 10)))
 
