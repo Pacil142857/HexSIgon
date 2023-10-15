@@ -26,8 +26,8 @@ derived_units = [
     Unit( 'Henry', 'H', 'Inductance', Hex(second = -2, meter = 2, kilogram = 1, ampere = -2, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Lux', 'lx', 'Illuminance', Hex(second = 0, meter = -2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 1)),
     # Unit( 'Becquerel', 'Bq', 'Activity Referred to a Radionuclide', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
-    Unit( 'Gray', 'Gy', 'Absorbed Dose (of Ionizing Radiation)', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
-    Unit( 'Sievert', 'Sv', 'Equivalent Dose (of Ionizing Radiation)', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
+    Unit( 'Gray', 'Gy', 'Absorbed Dose', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
+    Unit( 'Sievert', 'Sv', 'Equivalent Dose', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Katal', 'kat', 'Catalytic Activity', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
     Unit( 'Square Meter', 'm²', 'Area', Hex(second = 0, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Cubic Meter', 'm³', 'Volume', Hex(second = 0, meter = 3, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
@@ -63,5 +63,5 @@ derived_units = [
     Unit( 'Coulomb per Kilogram', 'C/kg', 'Exposure (X- and γ-Rays)', Hex(second = 1, meter = 0, kilogram = -1, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Gray per Second', 'Gy/s', 'Absorbed Dose Rate', Hex(second = -3, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Watt per Steradian', 'W/sr', 'Radiant Intensity', Hex(second = -3, meter = 2, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
-    Unit( 'Katal per Cubic Meter', 'kat/m³', 'Catalytic Activity Concentration', Hex(second = -1, meter = -3, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
+    # Unit( 'Katal per Cubic Meter', 'kat/m³', 'Catalytic Activity Concentration', Hex(second = -1, meter = -3, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
 ]
