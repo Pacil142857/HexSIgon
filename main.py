@@ -83,7 +83,7 @@ while run:
                         board.refresh_order(i)
                         hexes[hex_clicked_idx].hex.clear()
                         
-                    hexes[hex_clicked_idx].fill_color = (0, 0, 0)
+                    hexes[hex_clicked_idx].fill_color = (130, 150, 215)
                     hex_clicked_idx = -1
                     break
     
