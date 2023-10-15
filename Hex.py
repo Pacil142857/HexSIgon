@@ -127,9 +127,9 @@ class Hex:
                 if unit > 1:
                     if unit == 4:
                         numerator += f"{symbol}⁴·"
-                    if unit == 3:
+                    elif unit == 3:
                         numerator += f"{symbol}³·"
-                    if unit == 2:
+                    elif unit == 2:
                         numerator += f"{symbol}²·"
                     else:
                         numerator += f"({symbol}^{unit})·"
@@ -139,9 +139,9 @@ class Hex:
                 if unit < -1:
                     if unit == -4:
                         denominator += f"{symbol}⁴·"
-                    if unit == -3:
+                    elif unit == -3:
                         denominator += f"{symbol}³·"
-                    if unit == -2:
+                    elif unit == -2:
                         denominator += f"{symbol}²·"
                     else:
                         denominator += f"({symbol}^{-1 * unit})·"
