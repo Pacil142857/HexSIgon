@@ -2,9 +2,13 @@ import pygame
 from Board import Board
 from HexUI import HexUI
 from OrderUI import OrderUI
-import colorsys
+import sys
+import os
 from Hex import Hex
 from Order import Order
+
+if getattr(sys, "frozen", False):
+    os.chdir(sys._MEIPASS)
 
 # Initalize pygame with a screen
 pygame.init()
@@ -44,8 +48,12 @@ run = True
 while run:
     
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT or \
+            (event.type == pygame.KEYDOWN and event.key == pygame.K_F4 and (pygame.key[pygame.K_LALT] or pygame.key[pygame.K_LALT])):
             run = False
+            pygame.quit()
+            exit()
+        
         if event.type == pygame.MOUSEBUTTONUP:
             # Only handle left/right mouse button clicks
             if event.button not in (1, 3):
