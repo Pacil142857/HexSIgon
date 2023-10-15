@@ -17,9 +17,6 @@ class Board:
     def __init__(self, hex_0=Hex(), hex_1=Hex(), hex_2=Hex(), hex_3=Hex(), hex_4=Hex(), hex_5=Hex(), hex_6=Hex()):
         self.hexes = [hex_0, hex_1, hex_2, hex_3, hex_4, hex_5, hex_6]
         self.orders = [Order(), Order(), Order()]
-        
-        for x in range(3):
-            self.refresh_order(x)
         self.score = 0
         self.move_count = 0
         self.order_count = 0
@@ -30,7 +27,7 @@ class Board:
         new_unit = random.choice(derived_units)
         self.orders[order_index].change(
             hex=new_unit.hex, 
-            points=new_unit.hex.difficulty, 
+            points=new_unit.hex.difficulty(), 
             quantity_name=new_unit.quantity, 
             unit_name=new_unit.name
         )

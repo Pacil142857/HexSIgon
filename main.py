@@ -34,6 +34,9 @@ orders.append(OrderUI(board.orders[0], 20, 20))
 orders.append(OrderUI(board.orders[1], 20, 20 + height // 3))
 orders.append(OrderUI(board.orders[2], 20, 20 + 2 * height // 3))
 
+# Score
+font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 35)
+
 hex_clicked_idx = -1
 left_mouse_button_clicked = False
 run = True
@@ -88,6 +91,11 @@ while run:
         hex.draw(screen)
     for order in orders:
         order.draw(screen)
+    
+    # Draw score
+    text = font.render(f"Score: {board.score}", True, (255, 255, 255))
+    screen.blit(text, text.get_rect(topright = (width - 30, 10)))
+    
     pygame.display.flip()
     
 pygame.quit()
