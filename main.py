@@ -20,13 +20,13 @@ center_y = height // 2
 
 # Add HexUIs
 board.hexes = [Hex(), Hex(), Hex(), Hex(0, 1), Hex(), Hex(), Hex()]
-hexes.append(HexUI(board.hexes[0], center_x - 5 * radius // 3, center_y - radius, radius))
-hexes.append(HexUI(board.hexes[1], center_x - 5 * radius // 3, center_y + radius, radius))
-hexes.append(HexUI(board.hexes[2], center_x, center_y - 2 * radius, radius))
+hexes.append(HexUI(board.hexes[0], center_x - radius*1.5, center_y - radius*0.86602540378, radius))
+hexes.append(HexUI(board.hexes[1], center_x - radius*1.5, center_y + radius*0.86602540378, radius))
+hexes.append(HexUI(board.hexes[2], center_x, center_y - 2 * radius*0.86602540378, radius))
 hexes.append(HexUI(board.hexes[3], center_x, center_y, radius))
-hexes.append(HexUI(board.hexes[4], center_x, center_y + 2 * radius, radius))
-hexes.append(HexUI(board.hexes[5], center_x + 5 * radius // 3, center_y - radius, radius))
-hexes.append(HexUI(board.hexes[6], center_x + 5 * radius // 3, center_y + radius, radius))
+hexes.append(HexUI(board.hexes[4], center_x, center_y + 2 * radius*0.86602540378, radius))
+hexes.append(HexUI(board.hexes[5], center_x + radius*1.5, center_y - radius*0.86602540378, radius))
+hexes.append(HexUI(board.hexes[6], center_x + radius*1.5, center_y + radius*0.86602540378, radius))
 
 # Add OrderUIs
 board.orders = [Order(Hex(0, 1), 1, "length"), Order(Hex(0, 0, 1), 1, "mass"), Order(Hex(1), 1, "time")]
@@ -67,7 +67,8 @@ while run:
                         else:
                             if board.divideHexes(hex_clicked_idx, i):
                                 board.add_hex()
-                        hexes[hex_clicked_idx].fill_color = (0, 0, 0)
+                        
+                        hexes[hex_clicked_idx].fill_color = (130, 150, 215)
                         hex_clicked_idx = -1
                         
                         break
@@ -86,7 +87,7 @@ while run:
                     hex_clicked_idx = -1
                     break
     
-    screen.fill((0, 0, 0))
+    screen.fill((81, 81, 114))
     for hex in hexes:
         hex.draw(screen)
     for order in orders:
