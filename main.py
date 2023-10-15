@@ -29,7 +29,7 @@ hexes.append(HexUI(board.hexes[5], center_x + 5 * radius // 3, center_y - radius
 hexes.append(HexUI(board.hexes[6], center_x + 5 * radius // 3, center_y + radius, radius))
 
 # Add OrderUIs
-board.orders = [Order(Hex(0, 1), 1, "length", None), Order(Hex(0, 0, 1), 1, "mass", None), Order(Hex(1), 1, "time", None)]
+board.orders = [Order(Hex(0, 1), 1, "length"), Order(Hex(0, 0, 1), 1, "mass"), Order(Hex(1), 1, "time")]
 orders.append(OrderUI(board.orders[0], 20, 20))
 orders.append(OrderUI(board.orders[1], 20, 20 + height // 3))
 orders.append(OrderUI(board.orders[2], 20, 20 + 2 * height // 3))
