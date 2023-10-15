@@ -18,8 +18,8 @@ class HexUI:
     
     def draw(self, surface):
         # Draw the hexagon
-        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius, 0, self.fill_color))
-        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius, 1, self.hex_color))
+        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius, 0, self.hex_color))
+        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius-25, 0, self.fill_color))
         
         # Draw the text in the hexagon
         font = pygame.font.SysFont("Courier New", 30)
