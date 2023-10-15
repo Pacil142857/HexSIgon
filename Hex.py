@@ -122,12 +122,26 @@ class Hex:
                              (self.ampere, "A"), (self.kelvin, "K"), (self.mole, "mol"), (self.candela, "cd")):
             if unit > 0:
                 if unit > 1:
-                    numerator += f"({symbol}^{unit})·"
+                    if unit == 4:
+                        numerator += f"{symbol}⁴·"
+                    if unit == 3:
+                        numerator += f"{symbol}³·"
+                    if unit == 2:
+                        numerator += f"{symbol}²·"
+                    else:
+                        numerator += f"({symbol}^{unit})·"
                 else:
                     numerator += f"{symbol}·"
             elif unit < 0:
                 if unit < -1:
-                    denominator += f"({symbol}^{-1 * unit})·"
+                    if unit == -4:
+                        denominator += f"{symbol}⁴·"
+                    if unit == -3:
+                        denominator += f"{symbol}³·"
+                    if unit == -2:
+                        denominator += f"{symbol}²·"
+                    else:
+                        denominator += f"({symbol}^{-1 * unit})·"
                 else:
                     denominator += f"{symbol}·"
         
