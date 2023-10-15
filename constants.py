@@ -60,7 +60,7 @@ derived_units = [
     Unit( 'Henry per Meter', 'H/m', 'Permeability', Hex(second = -2, meter = 1, kilogram = 1, ampere = -2, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Joule per Mole', 'J/mol', 'Molar Energy', Hex(second = -2, meter = 2, kilogram = 1, ampere = 0, kelvin = 0, mole = -1, candela = 0)),
     Unit( 'Joule per Mole-Kelvin', 'J/(mol·K)', 'Molar Entropy',  Hex(second = -2, meter = 2, kilogram = 1, ampere = 0, kelvin = -1, mole = -1, candela = 0)),
-    Unit( 'Coulomb per Kilogram', 'C/kg', 'Exposure (X- and γ-Rays)', Hex(second = 1, meter = 0, kilogram = -1, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
+    Unit( 'Coulomb per Kilogram', 'C/kg', 'Exposure', Hex(second = 1, meter = 0, kilogram = -1, ampere = 1, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Gray per Second', 'Gy/s', 'Absorbed Dose Rate', Hex(second = -3, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Watt per Steradian', 'W/sr', 'Radiant Intensity', Hex(second = -3, meter = 2, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     # Unit( 'Katal per Cubic Meter', 'kat/m³', 'Catalytic Activity Concentration', Hex(second = -1, meter = -3, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
