@@ -117,14 +117,19 @@ class Hex:
                              (self.ampere, "A"), (self.kelvin, "K"), (self.mole, "mol"), (self.candela, "cd")):
             if unit > 0:
                 if unit > 1:
-                    numerator += f"({symbol}^{unit})"
+                    numerator += f"({symbol}^{unit})·"
                 else:
-                    numerator += f"({symbol})"
+                    numerator += f"{symbol}·"
             elif unit < 0:
                 if unit < -1:
-                    denominator += f"({symbol}^{-1 * unit})"
+                    denominator += f"({symbol}^{-1 * unit})·"
                 else:
-                    denominator += f"({symbol})"
+                    denominator += f"{symbol}·"
+        
+        if numerator:
+            numerator = numerator[:-1]
+        if denominator:
+            denominator = denominator[:-1]
         
         if denominator:
             return f"{numerator if numerator else 1}\n{'—' * max(len(numerator), len(denominator))}\n{denominator}"
