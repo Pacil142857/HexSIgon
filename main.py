@@ -15,11 +15,11 @@ board = Board()
 hexes = []
 orders = []
 radius = height / 6
-center_x = 2 * width // 3
+center_x = 3 * width // 4
 center_y = height // 2
 
 # Add HexUIs
-board.hexes = [Hex(1), Hex(0, 1), Hex(0, 0, 1), Hex(0, 0, 0, 1), Hex(kelvin = 1), Hex(mole = 1), Hex()]
+board.hexes = [Hex(), Hex(), Hex(), Hex(0, 1), Hex(), Hex(), Hex()]
 hexes.append(HexUI(board.hexes[0], center_x - 5 * radius // 3, center_y - radius, radius))
 hexes.append(HexUI(board.hexes[1], center_x - 5 * radius // 3, center_y + radius, radius))
 hexes.append(HexUI(board.hexes[2], center_x, center_y - 2 * radius, radius))
@@ -29,7 +29,7 @@ hexes.append(HexUI(board.hexes[5], center_x + 5 * radius // 3, center_y - radius
 hexes.append(HexUI(board.hexes[6], center_x + 5 * radius // 3, center_y + radius, radius))
 
 # Add OrderUIs
-board.orders = [Order(Hex(1), 1, "Length", None), Order(Hex(0, 1), 1, "Mass", None), Order(Hex(0, 0, 1), 1, "Time", None)]
+board.orders = [Order(Hex(0, 1), 1, "length", None), Order(Hex(0, 0, 1), 1, "mass", None), Order(Hex(1), 1, "time", None)]
 orders.append(OrderUI(board.orders[0], 20, 20))
 orders.append(OrderUI(board.orders[1], 20, 20 + height // 3))
 orders.append(OrderUI(board.orders[2], 20, 20 + 2 * height // 3))
