@@ -19,9 +19,9 @@ class HexUI:
     def draw(self, surface):
         # Draw the hexagon
         pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius, 0, self.hex_color))
-        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius-25, 0, self.fill_color))
+        pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius-5, 0, self.fill_color))
         
         # Draw the text in the hexagon
-        font = pygame.font.SysFont("Courier New", 30)
+        font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 30)
         text = font.render(str(self.hex), True, self.text_color)
         surface.blit(text, text.get_rect(center = (self.x, self.y)))

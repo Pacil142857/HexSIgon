@@ -10,7 +10,7 @@ class OrderUI:
         
     def getTextAndRect(self):
         # Render the text
-        font = pygame.font.SysFont("Courier New", 40)
+        font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 35)
         text = font.render(str(self.order), True, self.text_color)
         rect = text.get_rect(topleft = (self.x, self.y))
         
