@@ -25,7 +25,7 @@ derived_units = [
     Unit( 'Tesla', 'T', 'Magnetic Flux Density', Hex(second = -2, meter = 0, kilogram = 1, ampere = -1, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Henry', 'H', 'Inductance', Hex(second = -2, meter = 2, kilogram = 1, ampere = -2, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Lux', 'lx', 'Illuminance', Hex(second = 0, meter = -2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 1)),
-    Unit( 'Becquerel', 'Bq', 'Activity Referred to a Radionuclide', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
+    # Unit( 'Becquerel', 'Bq', 'Activity Referred to a Radionuclide', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Gray', 'Gy', 'Absorbed Dose (of Ionizing Radiation)', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Sievert', 'Sv', 'Equivalent Dose (of Ionizing Radiation)', Hex(second = -2, meter = 2, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     Unit( 'Katal', 'kat', 'Catalytic Activity', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
