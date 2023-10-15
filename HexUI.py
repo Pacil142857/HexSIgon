@@ -8,9 +8,9 @@ def draw_hex(x, y, radius, w=1, color=(255, 255, 255)):
 def custom_dramatic_drop_interpolation(input_value):
     # Define your known points and their corresponding values
     point1 = (1, 100)
-    point2 = (2, 65)
-    point3 = (23, 27)
-    point4 = (40, 18)
+    point2 = (2, 45)
+    point3 = (23, 22)
+    point4 = (40, 11)
 
     x1, y1 = point1
     x2, y2 = point2
