@@ -84,7 +84,9 @@ while run:
                         #hexes[hex_clicked_idx].outline_color = 'light gray'
                         status_text = ''
                         status_color=(81, 81, 114)
-
+                        for hex in hexes:
+                            hex.update()
+                            hex.outline_color = hex.default_color
                         hexes[i].outline_color = hexes[i].default_color
                         hex_clicked_idx = -1
                         
