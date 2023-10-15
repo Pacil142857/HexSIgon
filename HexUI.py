@@ -1,7 +1,12 @@
 from math import cos, floor
 from math import sin
 from math import tau
+from turtle import color
+from Hex import Hex
 import pygame
+import numpy as np
+import colorsys
+
 
 def draw_hex(x, y, radius, w=1, color=(255, 255, 255)):
     return [color, [(x + radius * cos(tau * i / 6), y + radius * sin(tau * i / 6)) for i in range(6)], w]
@@ -40,16 +45,49 @@ def custom_dramatic_drop_interpolation(input_value):
 
     
 class HexUI:
-    def __init__(self, hex, x, y, radius, hex_color=(51, 50, 82), text_color=(255, 255, 255)):
+    def __init__(self, hex: Hex, x, y, radius, hex_color=(51, 50, 82), text_color=(255, 255, 255)):
         self.hex = hex
         self.x = x
         self.y = y
         self.radius = radius
         self.hex_color = hex_color
         self.text_color = text_color
-        self.fill_color = (130, 150, 215)
+        
+        self.default_color = self.find_max_index_and_color(self.hex.getAsList())
+        self.fill_color = self.default_color
+        self.outline_color = self.fill_color
+
+
+    def update(self):
+        self.default_color = self.find_max_index_and_color(self.hex.getAsList())
+
+
+    import colorsys
+    def find_max_index_and_color(self, lst):
+        # Define the RGB values for the indices
+        colors = ['#f46d43', '#fdae61', '#fee08b', '#e6f598', '#abdda4', '#66c2a5', '#3288bd']
+
+        # Check if all elements in the list are 0
+        if all(x == 0 for x in lst):
+            return 'light gray'
+
+        # Find the index of the greatest integer
+        max_index = lst.index(max(lst))
+
+        # Convert the hex color code to RGB
+        hex_color = colors[max_index]
+        red = int(hex_color[1:3], 16)
+        green = int(hex_color[3:5], 16)
+        blue = int(hex_color[5:7], 16)
+
+        return (red, green, blue)
+
+
     
     def draw(self, surface):
+        self.default_color = self.find_max_index_and_color(self.hex.getAsList())
+        self.fill_color = self.default_color
+        
         # # Draw the hexagon
         # pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius+25, 0, self.hex_color))
         # pygame.draw.polygon(surface, *draw_hex(self.x, self.y, self.radius-5, 0, self.fill_color))
@@ -61,7 +99,12 @@ class HexUI:
 
         pygame.draw.polygon(surface, self.hex_color, [(self.x + self.radius * cos(2 * 3.14159 * i / 6), self.y + self.radius * sin(2 * 3.14159 * i / 6))
         for i in range(6)], 0)
-        pygame.draw.polygon(surface, self.fill_color, [(self.x + (self.radius-15) * cos(2 * 3.14159 * i / 6), self.y + (self.radius-15) * sin(2 * 3.14159 * i / 6))
+
+        #bottom
+        pygame.draw.polygon(surface, self.outline_color, [(self.x + (self.radius-15) * cos(2 * 3.14159 * i / 6), self.y + (self.radius-15) * sin(2 * 3.14159 * i / 6))
+        for i in range(6)], 0)
+        #top
+        pygame.draw.polygon(surface, self.fill_color, [(self.x + (self.radius-40) * cos(2 * 3.14159 * i / 6), self.y + (self.radius-40) * sin(2 * 3.14159 * i / 6))
         for i in range(6)], 0)
         
         # Draw the text in the hexagon

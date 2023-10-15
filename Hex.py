@@ -18,6 +18,9 @@ class Hex:
         self.mole = mole
         self.candela = candela
 
+    def getAsList(self):
+        return [self.second, self.meter, self.kilogram, self.ampere, self.kelvin, self.mole, self.candela]
+
     def clear(self):
         self.meter = 0
         self.kilogram = 0
@@ -110,6 +113,20 @@ class Hex:
             self.ampere == hex.ampere and self.kelvin == hex.kelvin and self.mole == hex.mole and self.candela == hex.candela
 
     def __str__(self):
+
+
+        #Check if it is a 
+
+
+
+
+
+
+
+
+
+
+
         numerator = ""
         denominator = ""
         # Create numerator and denominator
@@ -136,3 +153,4 @@ class Hex:
         if numerator:
             return numerator
         return "1"
+    

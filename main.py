@@ -2,7 +2,7 @@ import pygame
 from Board import Board
 from HexUI import HexUI
 from OrderUI import OrderUI
-
+import colorsys
 from Hex import Hex
 from Order import Order
 
@@ -37,10 +37,15 @@ orders.append(OrderUI(board.orders[2], 20, 20 + 2 * height // 3))
 # Score
 font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 35)
 
+
+status_text='hexSIgon!'
+status_color=(51, 50, 82)
+
 hex_clicked_idx = -1
 left_mouse_button_clicked = False
 run = True
 while run:
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -57,18 +62,33 @@ while run:
                             # Select a hex
                             hex_clicked_idx = i
                             left_mouse_button_clicked = event.button == 1
-                            hex.fill_color = (32, 0, 0) if left_mouse_button_clicked else (0, 32, 0)
+                            hex.outline_color = (240, 80, 50) if left_mouse_button_clicked else (80, 220, 50)
+                            status_text = 'Multiplying' if left_mouse_button_clicked else 'Dividing'
+                            status_color = (240, 80, 50) if left_mouse_button_clicked else (80, 220, 50)
                             break
                         
                         # Multiply/divide
                         if left_mouse_button_clicked:
                             if board.multiplyHexes(hex_clicked_idx, i):
                                 board.add_hex()
+                                for hex in hexes:
+                                    hex.update()
+                                    hex.outline_color = hex.default_color
                         else:
                             if board.divideHexes(hex_clicked_idx, i):
                                 board.add_hex()
+                                for hex in hexes:
+                                    hex.update()
+                                    hex.outline_color = hex.default_color
                         
-                        hexes[hex_clicked_idx].fill_color = (130, 150, 215)
+                        
+
+
+                        #hexes[hex_clicked_idx].outline_color = 'light gray'
+                        status_text = ''
+                        status_color=(81, 81, 114)
+
+                        hexes[i].outline_color = hexes[i].default_color
                         hex_clicked_idx = -1
                         
                         break
@@ -82,8 +102,16 @@ while run:
                     if order.order.compare_to(hexes[hex_clicked_idx].hex):
                         board.refresh_order(i)
                         hexes[hex_clicked_idx].hex.clear()
-                        
-                    hexes[hex_clicked_idx].fill_color = (130, 150, 215)
+                        status_text = 'Good Job!'
+
+                    
+                    for hex in hexes:
+                                    hex.update()
+                                    hex.outline_color = hex.default_color
+                    #hexes[hex_clicked_idx].outline_color = 'light gray'
+                    status_text = 'Incorrect!' if not status_text == 'Good Job!' else 'Good Job!'
+                    status_color=(51, 50, 82)
+
                     hex_clicked_idx = -1
                     break
     
@@ -96,6 +124,28 @@ while run:
     # Draw score
     text = font.render(f"Score: {board.score}", True, (255, 255, 255))
     screen.blit(text, text.get_rect(topright = (width - 30, 10)))
+
+    #Draw Status
+    # Create a font for rendering text
+    font = pygame.font.Font("JetbrainsMonoRegular-RpvmM.ttf", 55)
+
+    # Render the status text
+    bottom_status_text = font.render(status_text, True, (255, 255, 255))
+
+    # Create a rounded rectangle for the background
+    background_color = status_color  # Semi-transparent black
+    text_rect = bottom_status_text.get_rect()
+    text_rect.centerx = screen.get_rect().centerx
+    text_rect.y = screen.get_rect().height - 100  # Adjust this value to control the vertical position
+    text_rect.inflate_ip(25, 25)
+
+    # Blit the rounded rectangle to the screen
+    pygame.draw.rect(screen, background_color, text_rect, border_radius=20)
+    #pygame.draw.rect(screen, (255, 255, 255), text_rect, border_radius=20, width=2)  # Border
+
+    # Blit the text to the screen
+    screen.blit(bottom_status_text, bottom_status_text.get_rect(center=text_rect.center))
+        
     
     pygame.display.flip()
     
