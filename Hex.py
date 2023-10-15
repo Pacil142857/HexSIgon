@@ -158,7 +158,6 @@ class Hex:
         if numerator:
             return numerator
         return "1"
-<<<<<<< HEAD
 
 derived_units = [
     ( 'Hertz', 'Hz', 'Frequency', Hex(second = -1, meter = 0, kilogram = 0, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
@@ -215,6 +214,3 @@ derived_units = [
     ( 'Watt per Steradian', 'W/sr', 'Radiant Intensity', Hex(second = -3, meter = 2, kilogram = 1, ampere = 0, kelvin = 0, mole = 0, candela = 0)),
     ( 'Katal per Cubic Meter', 'kat/m³', 'Catalytic Activity Concentration', Hex(second = -1, meter = -3, kilogram = 0, ampere = 0, kelvin = 0, mole = 1, candela = 0)),
 ]
-=======
-    
->>>>>>> 7e4ae9008a1e830a577d92e53a168e72c84ee988
