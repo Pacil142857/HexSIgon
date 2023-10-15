@@ -1,7 +1,7 @@
 import pygame
 
 class OrderUI:
-    def __init__(self, order, x, y, rect_color=(255, 255, 255), text_color=(255, 255, 255)):
+    def __init__(self, order, x, y, rect_color=(140, 145, 183), text_color=(255, 255, 255)):
         self.order = order
         self.x = x
         self.y = y
@@ -20,7 +20,7 @@ class OrderUI:
         text, rect = self.getTextAndRect()
         
         # Draw the rectangle
-        pygame.draw.rect(surface, self.rect_color, rect, 1, 4)
+        pygame.draw.rect(surface, self.rect_color, rect, 0, 4)
         
         # Draw the text in the rectangle
         surface.blit(text, rect)
